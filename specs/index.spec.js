@@ -41,16 +41,14 @@ describe('user', () => {
             expect(JSON.stringify(res.body.message)).toEqual("\"User not found!\"")
         })
 
-
-
         test.each([
-            {a: config.credentials.userName, b: config.credentials.password, expected: 201},
-            {a: config.credentials.userName, b: '2', expected: 400},
-            {a: 'test', b: '1', expected: 400},
+            {a: config.credentialsParameterized.userName, b: config.credentialsParameterized.password, expected: 201},
+            {a: config.credentialsParameterized.userName + '1', b: '2', expected: 400},
+            {a: config.credentialsParameterized.userName, b: '1', expected: 400},
           ])('Параметризованный тест для создания пользователя', async ({a, b, expected}) => {
-            const resUser = await user.signup({'userName' :a, 'password': b})
+            const resUser = await user.signup({'userName': a, 'password': b})
             expect(resUser.status).toBe(expected);
-          });
+          })
 
     })
 

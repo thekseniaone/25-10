@@ -9,6 +9,10 @@ const config = {
     credentialsAuthTest: {
         userName: faker.internet.userName(),
         password: 'Test123#1',
+    },
+    credentialsParameterized:{
+        userName: faker.internet.userName(),
+        password: 'Test123#2',
     }
 
 }
