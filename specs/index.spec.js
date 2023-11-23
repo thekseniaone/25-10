@@ -48,7 +48,6 @@ describe('user', () => {
           ])('Параметризованный тест для создания пользователя', async ({a, b, expected}) => {
             const resUser = await user.signup({'userName': a, 'password': b})
             expect(resUser.status).toBe(expected);
-
           })
 
     })
