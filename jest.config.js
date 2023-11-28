@@ -193,6 +193,14 @@ const config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
+  "reporters": [
+    "default",
+    ["jest-html-reporters", {
+      "publicPath": "./jest-html-report",
+      "filename": "report.html",
+    }]
+  ]
+  
 };
 
 module.exports = config;
